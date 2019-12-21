@@ -18,9 +18,9 @@ func getRandomNumber(numRands int) (int, int) {
 	return a, b
 }
 
-// func main() {
-// 	num := 40
-// 	x, y := getRandomNumber(num)
-// 	print("Result：", x, " + ", y, " = ", num, " ? ")
-// 	println(x+y == num)
-// }
+func main() {
+	num := 40
+	x, y := getRandomNumber(num)
+	print("Result：", x, " + ", y, " = ", num, " ? ")
+	println(x+y == num)
+}
