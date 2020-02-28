@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const permutation = function (S) {
+        let ans = [];
+        let len = S.length;
+        let loop = (s) => {
+          if (s.length === len) {
+            ans.push(s);
+            return;
+          }
+          for (let i = 0; i < len; i++) {
+            if (!s.includes(S[i])) {
+              s += S[i];
+              loop(s);
+              s = s.substring(0, s.length - 1);
+            }
+          }
+        };
+
+        loop("");
+
+        return ans;
+      };
+      console.log(permutation("ab"));
+      const a = 1;
+      function test (arg) {
+        arg++;
+        console.log(arg)
+      }
+      test(a);
+      console.log(a)
+    </script>
+  </body>
+</html>
