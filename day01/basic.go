@@ -39,9 +39,11 @@ func enums() {
 	fmt.Println(b, kb, mb, gb, tb, pb)
 }
 
-func main() {
-	variableZeroValue()
-	variableInitialValue()
 
-	enums()
+
+func main() {
+	//variableZeroValue()
+	//variableInitialValue()
+	//
+	//enums()
 }

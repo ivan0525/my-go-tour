@@ -99,10 +99,14 @@ func literalStruct() {
 	//fmt.Printf("%v\n",book)
 	//var a = 1
 	//fmt.Printf("%T",&a)
-	//Book{}.page=1
+
 	//fmt.Println(b)
 	//var s = "hello"
-	const c = 1
+	//fmt.Println()
+	a:=1
+	b:=&a
+	fmt.Println(b)
+	(&Book{}).page=1
 }
 
 func swap1(a, b *int) {
@@ -115,7 +119,85 @@ func swap2(a, b int) (int, int) {
 	return b, a
 }
 
+type treeNode struct {
+	value       int
+	left, right *treeNode
+}
+
+func (node treeNode) print() {
+	fmt.Println(node.value)
+}
+
+func (node *treeNode) setValue(val int) {
+	if node == nil {
+		return
+	}
+	node.value = val
+}
+
+func createNode(value int) *treeNode {
+	return &treeNode{value: value}
+}
+
+// 树的遍历
+// 先序遍历
+func (node *treeNode) preOrder() {
+	if node == nil {
+		return
+	}
+	node.print()
+	node.left.preOrder()
+	node.right.preOrder()
+}
+
+// 中序遍历
+func (node *treeNode) midOrder() {
+	if node == nil {
+		return
+	}
+
+	node.left.midOrder()
+
+	node.print()
+	node.right.midOrder()
+}
+
+// 后序遍历
+func (node *treeNode) lastOrder() {
+	if node == nil {
+		return
+	}
+
+	node.left.lastOrder()
+	node.right.lastOrder()
+	node.print()
+}
+
+func makeTree() {
+	root := treeNode{value: 1}
+	root.left = &treeNode{}
+	root.right = createNode(4)
+	root.left.right = new(treeNode)
+	root.right.left = &treeNode{}
+	//root.print()
+	//root.setValue(4)
+	//root.print()
+	//var pRoot *treeNode
+	//fmt.Println(pRoot)
+	//pRoot.setValue(100)
+	//pRoot=&root
+	//pRoot.setValue(500)
+	//pRoot.print()
+	root.preOrder()
+}
+
+type Point struct {
+	x int
+	y int
+}
+
 func main() {
+	//makeTree()
 	//example()
 	//nonStruct()
 	//structMemory()
@@ -124,8 +206,17 @@ func main() {
 	//var cat = newAnimal("小花", 3, 1)
 	//fmt.Println(dog, cat)
 	//literalStruct()
-	x, y := 1, 2
-	swap1(&x, &y)
-	fmt.Println(x, y)
-	fmt.Println(swap2(x,y))
+
+	//x, y := 1, 2
+	//swap1(&x, &y)
+	//fmt.Println(x, y)
+	//fmt.Println(swap2(x,y))
+	p:=Point{1,2}
+	p1:=&p
+	(*p1).x=1e9
+	fmt.Println(p)
+	v:=Point{y:1}
+	v1:=Point{}
+	v2:=&Point{3,4}
+	fmt.Println(v, v1, v2)
 }

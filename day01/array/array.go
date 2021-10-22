@@ -1,15 +1,17 @@
 package main
 
-import "fmt"
-
-func testPointArray(x [2]int) {
-	fmt.Printf("x: %p\n", &x)
-	x[1] = 100
-}
+import (
+	"fmt"
+)
 
 func main() {
-	arr := [2]int{}
-	fmt.Printf("arr: %p\n", &arr)
-	testPointArray(arr)
-	fmt.Println(len(arr))
+	var s [5]int
+	s[4] = 100
+	fmt.Println(s)
+	fmt.Println("set:", s)
+	fmt.Println("get:", s[4])
+	fmt.Println("len", len(s))
+
+	b := [5]int{1, 2, 3, 4, 5}
+	fmt.Println(b)
 }
