@@ -13,7 +13,7 @@ func f1(arg int) (int, error) {
 }
 
 type argError struct {
-	arg int
+	arg  int
 	prob string
 }
 

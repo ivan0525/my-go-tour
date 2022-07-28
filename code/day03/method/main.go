@@ -26,10 +26,6 @@ func (r rect) perim() float64 {
 	return 2*r.width + 2*r.height
 }
 
-func (r rect) addWidth() {
-	r.width++
-}
-
 func (c circle) area() float64 {
 	return math.Pi * c.radius * c.radius
 }
@@ -49,6 +45,5 @@ func main() {
 	c := circle{radius: 5}
 	measure(r)
 	measure(c)
-
 
 }
