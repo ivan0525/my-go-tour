@@ -6,8 +6,12 @@ export default defineConfig({
   themeConfig: {
     sidebar: [
       {
-        text: 'Go语言基础',
-        items:[
+        text: 'Go语言学习',
+        items: [
+          {
+            text: '起步',
+            link: '/start'
+          },
           {
             text: '基础',
             link: '/basic/go-basic'

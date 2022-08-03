@@ -103,10 +103,10 @@ func literalStruct() {
 	//fmt.Println(b)
 	//var s = "hello"
 	//fmt.Println()
-	a:=1
-	b:=&a
+	a := 1
+	b := &a
 	fmt.Println(b)
-	(&Book{}).page=1
+	(&Book{}).page = 1
 }
 
 func swap1(a, b *int) {
@@ -196,27 +196,27 @@ type Point struct {
 	y int
 }
 
-func main() {
-	//makeTree()
-	//example()
-	//nonStruct()
-	//structMemory()
-	//question()
-	//var dog = newAnimal("小虎", 4, 0)
-	//var cat = newAnimal("小花", 3, 1)
-	//fmt.Println(dog, cat)
-	//literalStruct()
+// func main() {
+// 	//makeTree()
+// 	//example()
+// 	//nonStruct()
+// 	structMemory()
+// 	//question()
+// 	//var dog = newAnimal("小虎", 4, 0)
+// 	//var cat = newAnimal("小花", 3, 1)
+// 	//fmt.Println(dog, cat)
+// 	//literalStruct()
 
-	//x, y := 1, 2
-	//swap1(&x, &y)
-	//fmt.Println(x, y)
-	//fmt.Println(swap2(x,y))
-	p:=Point{1,2}
-	p1:=&p
-	(*p1).x=1e9
-	fmt.Println(p)
-	v:=Point{y:1}
-	v1:=Point{}
-	v2:=&Point{3,4}
-	fmt.Println(v, v1, v2)
-}
+// 	//x, y := 1, 2
+// 	//swap1(&x, &y)
+// 	//fmt.Println(x, y)
+// 	//fmt.Println(swap2(x,y))
+// 	p := Point{1, 2}
+// 	p1 := &p
+// 	(*p1).x = 1e9
+// 	fmt.Println(p)
+// 	v := Point{y: 1}
+// 	v1 := Point{}
+// 	v2 := &Point{3, 4}
+// 	fmt.Println(v, v1, v2)
+// }
