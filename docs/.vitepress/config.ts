@@ -15,6 +15,10 @@ export default defineConfig({
           {
             text: '基础',
             link: '/basic/go-basic'
+          },
+          {
+            text: '依赖管理',
+            link: '/basic/dependency'
           }
         ]
       }
